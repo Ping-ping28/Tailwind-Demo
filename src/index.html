@@ -17,47 +17,126 @@
     />
     <link rel="stylesheet" href="./output.css" />
     <title>Document</title>
+    <style>
+      main {
+        margin-top: 64px; /* Adjust this value based on your navbar height */
+      }
+    </style>
   </head>
   <body>
     <header>
       <!-- navbar -->
-      <nav class="bg-gray-800 p-4">
-        <div class="container mx-auto flex justify-between items-center">
-          <!-- Logo/Brand Name -->
-
-          <div class="md:flex md:justify-between">
-            <div class="flex mb-6 md:mb-0">
-              <div class="text-white font-bold text-xl px-1">Idea</div>
-              <img
-                src="/img/idea-3383766_1280__1_-removebg-preview.png"
-                alt="idea logo"
-                class="h-8 me-3"
-              />
+      <nav class="bg-white p-4 fixed top-0 left-0 w-full z-50 shadow-md">
+        <div class="container mx-auto">
+          <!-- Main navbar content -->
+          <div class="flex justify-between items-center">
+            <!-- Logo/Brand Name -->
+            <div class="flex items-center">
+              <a href="/src/index.html" class="flex items-center">
+                <div class="text-black font-bold text-xl px-1">Idea</div>
+                <img
+                  src="/img/idea-3383766_1280__1_-removebg-preview.png"
+                  alt="idea logo"
+                  class="h-8 me-3"
+                />
+              </a>
+            </div>
+      
+            <!-- Mobile Menu Button -->
+            <button 
+              class="md:hidden text-black"
+              onclick="document.getElementById('mobile-menu').classList.toggle('hidden')"
+            >
+              <svg
+                class="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h16M4 18h16"
+                ></path>
+              </svg>
+            </button>
+      
+            <!-- Desktop Navigation -->
+            <div class="hidden md:flex md:flex-grow md:items-center">
+              <!-- Search Bar with Icon -->
+              <div class="flex-grow mx-4 relative">
+                <input
+                  type="text"
+                  placeholder="Search your idea here..."
+                  class="w-full pl-10 pr-4 py-2 rounded-lg bg-yellow-50 text-black placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                />
+                <svg
+                  class="w-5 h-5 absolute left-3 top-1/2 transform -translate-y-1/2 text-black"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                  ></path>
+                </svg>
+              </div>
+      
+              <!-- Desktop Menu Links -->
+              <div class="flex space-x-4">
+                <a href="/src/index.html" class="text-black hover:text-gray-300">Home</a>
+                <a href="/src/aboutpage.html" class="text-black hover:text-gray-300">About</a>
+                <a href="#" class="text-black hover:text-gray-300">Services</a>
+                <a href="/src/contact.html" class="text-black hover:text-gray-300">Contact</a>
+              </div>
             </div>
           </div>
-
-          <!-- Navigation Links -->
-          <div class="flex space-x-4">
-            <a href="/src/homepage.html" class="text-white hover:text-gray-300"
-              >Home</a
-            >
-
-            <a href="/src/aboutpage.html" class="text-white hover:text-gray-300"
-              >About</a
-            >
-
-            <a
-              href="/src/servicepage.html"
-              class="text-white hover:text-gray-300"
-              >Services</a
-            >
-
-            <a href="#" class="text-white hover:text-gray-300">Contact</a>
+      
+          <!-- Mobile Menu -->
+          <div id="mobile-menu" class="hidden md:hidden w-full">
+            <div class="pt-4 pb-3">
+              <!-- Mobile Search -->
+              <div class="relative mb-4">
+                <input
+                  type="text"
+                  placeholder="Search your idea here..."
+                  class="w-full pl-10 pr-4 py-2 rounded-lg bg-yellow-50 text-black placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                />
+                <svg
+                  class="w-5 h-5 absolute left-3 top-1/2 transform -translate-y-1/2 text-black"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                  ></path>
+                </svg>
+              </div>
+              
+              <!-- Mobile Menu Links -->
+              <div class="flex flex-col space-y-2">
+                <a href="/src/index.html" class="text-black hover:text-gray-300 py-2">Home</a>
+                <a href="/src/aboutpage.html" class="text-black hover:text-gray-300 py-2">About</a>
+                <a href="#" class="text-black hover:text-gray-300 py-2">Services</a>
+                <a href="/src/contact.html" class="text-black hover:text-gray-300 py-2">Contact</a>
+              </div>
+            </div>
           </div>
         </div>
       </nav>
     </header>
     <main>
+      <!--hero section  -->
       <section
         class="bg-center bg-no-repeat bg-[url('https://media.licdn.com/dms/image/v2/D5612AQHo_qF96A7HbQ/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1721400250022?e=2147483647&v=beta&t=OFf_e0Jrug_6T4rlUH4ZBHKgJASXSuqvBlgRHrpgHqE')] bg-gray-700 bg-blend-multiply"
       >
@@ -103,6 +182,458 @@
             >
               Learn more
             </a>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div class="m-5 p-5 text-center bg-gray-100 rounded-xl">
+          <h1 class="text-gray-800 font-bold text-2xl">
+            Where Great Ideas Begin.
+          </h1>
+          <p class="text-gray-600 mt-2 text-lg">
+            Get to know about many kinds of idea which interesting you.
+          </p>
+        </div>
+      </section>
+      <!-- card section -->
+      <section>
+        <!-- Card Container -->
+        <div class="flex flex-wrap justify-center gap-4 p-4">
+          <!-- Card 1 -->
+          <div
+            class="relative overflow-hidden rounded-lg shadow transition hover:shadow-lg w-80 sm:w-96 lg:w-72 xl:w-80 m-2"
+          >
+            <img
+              alt=""
+              src="https://images.unsplash.com/photo-1661956602116-aa6865609028?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=764&q=80"
+              class="absolute inset-0 h-full w-full object-cover"
+            />
+
+            <div
+              class="relative bg-gradient-to-t from-gray-900/50 to-gray-900/25 pt-24 sm:pt-32 lg:pt-40"
+            >
+              <div class="p-3 sm:p-4">
+                <time datetime="2022-10-10" class="block text-xs text-white/90">
+                  10th Oct 2022
+                </time>
+
+                <a href="#">
+                  <h3 class="mt-0.5 text-base text-white">
+                    How to position your furniture for positivity
+                  </h3>
+                </a>
+
+                <p class="mt-2 line-clamp-3 text-xs/relaxed text-white/95">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  Recusandae dolores, possimus pariatur animi temporibus
+                  nesciunt praesentium dolore sed nulla ipsum eveniet corporis
+                  quidem, mollitia itaque minus soluta, voluptates neque
+                  explicabo tempora nisi culpa eius atque dignissimos. Molestias
+                  explicabo corporis voluptatem?
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- Card 2 -->
+          <div
+            class="relative overflow-hidden rounded-lg shadow transition hover:shadow-lg w-80 sm:w-96 lg:w-72 xl:w-80 m-2"
+          >
+            <img
+              alt=""
+              src="https://images.unsplash.com/photo-1661956602116-aa6865609028?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=764&q=80"
+              class="absolute inset-0 h-full w-full object-cover"
+            />
+
+            <div
+              class="relative bg-gradient-to-t from-gray-900/50 to-gray-900/25 pt-24 sm:pt-32 lg:pt-40"
+            >
+              <div class="p-3 sm:p-4">
+                <time datetime="2022-10-10" class="block text-xs text-white/90">
+                  10th Oct 2022
+                </time>
+
+                <a href="#">
+                  <h3 class="mt-0.5 text-base text-white">
+                    How to position your furniture for positivity
+                  </h3>
+                </a>
+
+                <p class="mt-2 line-clamp-3 text-xs/relaxed text-white/95">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  Recusandae dolores, possimus pariatur animi temporibus
+                  nesciunt praesentium dolore sed nulla ipsum eveniet corporis
+                  quidem, mollitia itaque minus soluta, voluptates neque
+                  explicabo tempora nisi culpa eius atque dignissimos. Molestias
+                  explicabo corporis voluptatem?
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- Card 2 -->
+          <div
+            class="relative overflow-hidden rounded-lg shadow transition hover:shadow-lg w-80 sm:w-96 lg:w-72 xl:w-80 m-2"
+          >
+            <img
+              alt=""
+              src="https://images.unsplash.com/photo-1661956602116-aa6865609028?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=764&q=80"
+              class="absolute inset-0 h-full w-full object-cover"
+            />
+
+            <div
+              class="relative bg-gradient-to-t from-gray-900/50 to-gray-900/25 pt-24 sm:pt-32 lg:pt-40"
+            >
+              <div class="p-3 sm:p-4">
+                <time datetime="2022-10-10" class="block text-xs text-white/90">
+                  10th Oct 2022
+                </time>
+
+                <a href="#">
+                  <h3 class="mt-0.5 text-base text-white">
+                    How to position your furniture for positivity
+                  </h3>
+                </a>
+
+                <p class="mt-2 line-clamp-3 text-xs/relaxed text-white/95">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  Recusandae dolores, possimus pariatur animi temporibus
+                  nesciunt praesentium dolore sed nulla ipsum eveniet corporis
+                  quidem, mollitia itaque minus soluta, voluptates neque
+                  explicabo tempora nisi culpa eius atque dignissimos. Molestias
+                  explicabo corporis voluptatem?
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- Card 2 -->
+          <div
+            class="relative overflow-hidden rounded-lg shadow transition hover:shadow-lg w-80 sm:w-96 lg:w-72 xl:w-80 m-2"
+          >
+            <img
+              alt=""
+              src="https://images.unsplash.com/photo-1661956602116-aa6865609028?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=764&q=80"
+              class="absolute inset-0 h-full w-full object-cover"
+            />
+
+            <div
+              class="relative bg-gradient-to-t from-gray-900/50 to-gray-900/25 pt-24 sm:pt-32 lg:pt-40"
+            >
+              <div class="p-3 sm:p-4">
+                <time datetime="2022-10-10" class="block text-xs text-white/90">
+                  10th Oct 2022
+                </time>
+
+                <a href="#">
+                  <h3 class="mt-0.5 text-base text-white">
+                    How to position your furniture for positivity
+                  </h3>
+                </a>
+
+                <p class="mt-2 line-clamp-3 text-xs/relaxed text-white/95">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  Recusandae dolores, possimus pariatur animi temporibus
+                  nesciunt praesentium dolore sed nulla ipsum eveniet corporis
+                  quidem, mollitia itaque minus soluta, voluptates neque
+                  explicabo tempora nisi culpa eius atque dignissimos. Molestias
+                  explicabo corporis voluptatem?
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- Card 2 -->
+          <div
+            class="relative overflow-hidden rounded-lg shadow transition hover:shadow-lg w-80 sm:w-96 lg:w-72 xl:w-80 m-2"
+          >
+            <img
+              alt=""
+              src="https://images.unsplash.com/photo-1661956602116-aa6865609028?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=764&q=80"
+              class="absolute inset-0 h-full w-full object-cover"
+            />
+
+            <div
+              class="relative bg-gradient-to-t from-gray-900/50 to-gray-900/25 pt-24 sm:pt-32 lg:pt-40"
+            >
+              <div class="p-3 sm:p-4">
+                <time datetime="2022-10-10" class="block text-xs text-white/90">
+                  10th Oct 2022
+                </time>
+
+                <a href="#">
+                  <h3 class="mt-0.5 text-base text-white">
+                    How to position your furniture for positivity
+                  </h3>
+                </a>
+
+                <p class="mt-2 line-clamp-3 text-xs/relaxed text-white/95">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  Recusandae dolores, possimus pariatur animi temporibus
+                  nesciunt praesentium dolore sed nulla ipsum eveniet corporis
+                  quidem, mollitia itaque minus soluta, voluptates neque
+                  explicabo tempora nisi culpa eius atque dignissimos. Molestias
+                  explicabo corporis voluptatem?
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- Card 2 -->
+          <div
+            class="relative overflow-hidden rounded-lg shadow transition hover:shadow-lg w-80 sm:w-96 lg:w-72 xl:w-80 m-2"
+          >
+            <img
+              alt=""
+              src="https://images.unsplash.com/photo-1661956602116-aa6865609028?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=764&q=80"
+              class="absolute inset-0 h-full w-full object-cover"
+            />
+
+            <div
+              class="relative bg-gradient-to-t from-gray-900/50 to-gray-900/25 pt-24 sm:pt-32 lg:pt-40"
+            >
+              <div class="p-3 sm:p-4">
+                <time datetime="2022-10-10" class="block text-xs text-white/90">
+                  10th Oct 2022
+                </time>
+
+                <a href="#">
+                  <h3 class="mt-0.5 text-base text-white">
+                    How to position your furniture for positivity
+                  </h3>
+                </a>
+
+                <p class="mt-2 line-clamp-3 text-xs/relaxed text-white/95">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  Recusandae dolores, possimus pariatur animi temporibus
+                  nesciunt praesentium dolore sed nulla ipsum eveniet corporis
+                  quidem, mollitia itaque minus soluta, voluptates neque
+                  explicabo tempora nisi culpa eius atque dignissimos. Molestias
+                  explicabo corporis voluptatem?
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div class="m-5 p-5 text-center bg-gray-100 rounded-xl">
+          <h1 class="text-gray-800 font-bold text-2xl">
+            Everything you curious.
+          </h1>
+          <p class="text-gray-600 mt-2 text-lg">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
+          </p>
+        </div>
+      </section>
+      <!-- card section -->
+      <section>
+        <!-- Card Container -->
+        <div class="flex flex-wrap justify-center gap-4 p-4">
+          <!-- Card 1 -->
+          <div
+            class="relative overflow-hidden rounded-lg shadow transition hover:shadow-lg w-80 sm:w-96 lg:w-72 xl:w-80 m-2"
+          >
+            <img
+              alt=""
+              src="https://images.unsplash.com/photo-1661956602116-aa6865609028?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=764&q=80"
+              class="absolute inset-0 h-full w-full object-cover"
+            />
+
+            <div
+              class="relative bg-gradient-to-t from-gray-900/50 to-gray-900/25 pt-24 sm:pt-32 lg:pt-40"
+            >
+              <div class="p-3 sm:p-4">
+                <time datetime="2022-10-10" class="block text-xs text-white/90">
+                  10th Oct 2022
+                </time>
+
+                <a href="#">
+                  <h3 class="mt-0.5 text-base text-white">
+                    How to position your furniture for positivity
+                  </h3>
+                </a>
+
+                <p class="mt-2 line-clamp-3 text-xs/relaxed text-white/95">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  Recusandae dolores, possimus pariatur animi temporibus
+                  nesciunt praesentium dolore sed nulla ipsum eveniet corporis
+                  quidem, mollitia itaque minus soluta, voluptates neque
+                  explicabo tempora nisi culpa eius atque dignissimos. Molestias
+                  explicabo corporis voluptatem?
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- Card 2 -->
+          <div
+            class="relative overflow-hidden rounded-lg shadow transition hover:shadow-lg w-80 sm:w-96 lg:w-72 xl:w-80 m-2"
+          >
+            <img
+              alt=""
+              src="https://images.unsplash.com/photo-1661956602116-aa6865609028?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=764&q=80"
+              class="absolute inset-0 h-full w-full object-cover"
+            />
+
+            <div
+              class="relative bg-gradient-to-t from-gray-900/50 to-gray-900/25 pt-24 sm:pt-32 lg:pt-40"
+            >
+              <div class="p-3 sm:p-4">
+                <time datetime="2022-10-10" class="block text-xs text-white/90">
+                  10th Oct 2022
+                </time>
+
+                <a href="#">
+                  <h3 class="mt-0.5 text-base text-white">
+                    How to position your furniture for positivity
+                  </h3>
+                </a>
+
+                <p class="mt-2 line-clamp-3 text-xs/relaxed text-white/95">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  Recusandae dolores, possimus pariatur animi temporibus
+                  nesciunt praesentium dolore sed nulla ipsum eveniet corporis
+                  quidem, mollitia itaque minus soluta, voluptates neque
+                  explicabo tempora nisi culpa eius atque dignissimos. Molestias
+                  explicabo corporis voluptatem?
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- Card 2 -->
+          <div
+            class="relative overflow-hidden rounded-lg shadow transition hover:shadow-lg w-80 sm:w-96 lg:w-72 xl:w-80 m-2"
+          >
+            <img
+              alt=""
+              src="https://images.unsplash.com/photo-1661956602116-aa6865609028?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=764&q=80"
+              class="absolute inset-0 h-full w-full object-cover"
+            />
+
+            <div
+              class="relative bg-gradient-to-t from-gray-900/50 to-gray-900/25 pt-24 sm:pt-32 lg:pt-40"
+            >
+              <div class="p-3 sm:p-4">
+                <time datetime="2022-10-10" class="block text-xs text-white/90">
+                  10th Oct 2022
+                </time>
+
+                <a href="#">
+                  <h3 class="mt-0.5 text-base text-white">
+                    How to position your furniture for positivity
+                  </h3>
+                </a>
+
+                <p class="mt-2 line-clamp-3 text-xs/relaxed text-white/95">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  Recusandae dolores, possimus pariatur animi temporibus
+                  nesciunt praesentium dolore sed nulla ipsum eveniet corporis
+                  quidem, mollitia itaque minus soluta, voluptates neque
+                  explicabo tempora nisi culpa eius atque dignissimos. Molestias
+                  explicabo corporis voluptatem?
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- Card 2 -->
+          <div
+            class="relative overflow-hidden rounded-lg shadow transition hover:shadow-lg w-80 sm:w-96 lg:w-72 xl:w-80 m-2"
+          >
+            <img
+              alt=""
+              src="https://images.unsplash.com/photo-1661956602116-aa6865609028?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=764&q=80"
+              class="absolute inset-0 h-full w-full object-cover"
+            />
+
+            <div
+              class="relative bg-gradient-to-t from-gray-900/50 to-gray-900/25 pt-24 sm:pt-32 lg:pt-40"
+            >
+              <div class="p-3 sm:p-4">
+                <time datetime="2022-10-10" class="block text-xs text-white/90">
+                  10th Oct 2022
+                </time>
+
+                <a href="#">
+                  <h3 class="mt-0.5 text-base text-white">
+                    How to position your furniture for positivity
+                  </h3>
+                </a>
+
+                <p class="mt-2 line-clamp-3 text-xs/relaxed text-white/95">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  Recusandae dolores, possimus pariatur animi temporibus
+                  nesciunt praesentium dolore sed nulla ipsum eveniet corporis
+                  quidem, mollitia itaque minus soluta, voluptates neque
+                  explicabo tempora nisi culpa eius atque dignissimos. Molestias
+                  explicabo corporis voluptatem?
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- Card 2 -->
+          <div
+            class="relative overflow-hidden rounded-lg shadow transition hover:shadow-lg w-80 sm:w-96 lg:w-72 xl:w-80 m-2"
+          >
+            <img
+              alt=""
+              src="https://images.unsplash.com/photo-1661956602116-aa6865609028?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=764&q=80"
+              class="absolute inset-0 h-full w-full object-cover"
+            />
+
+            <div
+              class="relative bg-gradient-to-t from-gray-900/50 to-gray-900/25 pt-24 sm:pt-32 lg:pt-40"
+            >
+              <div class="p-3 sm:p-4">
+                <time datetime="2022-10-10" class="block text-xs text-white/90">
+                  10th Oct 2022
+                </time>
+
+                <a href="#">
+                  <h3 class="mt-0.5 text-base text-white">
+                    How to position your furniture for positivity
+                  </h3>
+                </a>
+
+                <p class="mt-2 line-clamp-3 text-xs/relaxed text-white/95">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  Recusandae dolores, possimus pariatur animi temporibus
+                  nesciunt praesentium dolore sed nulla ipsum eveniet corporis
+                  quidem, mollitia itaque minus soluta, voluptates neque
+                  explicabo tempora nisi culpa eius atque dignissimos. Molestias
+                  explicabo corporis voluptatem?
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- Card 2 -->
+          <div
+            class="relative overflow-hidden rounded-lg shadow transition hover:shadow-lg w-80 sm:w-96 lg:w-72 xl:w-80 m-2"
+          >
+            <img
+              alt=""
+              src="https://images.unsplash.com/photo-1661956602116-aa6865609028?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=764&q=80"
+              class="absolute inset-0 h-full w-full object-cover"
+            />
+
+            <div
+              class="relative bg-gradient-to-t from-gray-900/50 to-gray-900/25 pt-24 sm:pt-32 lg:pt-40"
+            >
+              <div class="p-3 sm:p-4">
+                <time datetime="2022-10-10" class="block text-xs text-white/90">
+                  10th Oct 2022
+                </time>
+
+                <a href="#">
+                  <h3 class="mt-0.5 text-base text-white">
+                    How to position your furniture for positivity
+                  </h3>
+                </a>
+
+                <p class="mt-2 line-clamp-3 text-xs/relaxed text-white/95">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  Recusandae dolores, possimus pariatur animi temporibus
+                  nesciunt praesentium dolore sed nulla ipsum eveniet corporis
+                  quidem, mollitia itaque minus soluta, voluptates neque
+                  explicabo tempora nisi culpa eius atque dignissimos. Molestias
+                  explicabo corporis voluptatem?
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
